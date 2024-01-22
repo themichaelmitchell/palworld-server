@@ -1,0 +1,11 @@
+services:
+  palworld-server:
+    container_name: palworld-server
+    restart: unless-stopped
+    image: palworld-server
+    ports:
+      - 8211:8211/udp
+    volumes:
+      - ./Saved/:/data/Pal/Saved/
+    environment:
+      STEAM_UPDATE_CHECK: true
